@@ -1,5 +1,16 @@
 <app-header titulo="inicio"></app-header>
 <ion-content>
-  <ion-button routerLink="/contacto">Ir Contacto</ion-button>
-  <ion-button routerLink="/nosotros">Ir Nosotros</ion-button>
+  <ion-list>
+    <ion-item
+    *ngFor="let componente of componentes"
+    [routerLink]="componente.direccion"
+    >
+      <ion-icon [name]="componente.icono" slot="end" color="primary"></ion-icon>
+      {{componente.nombre}}
+    </ion-item>
+    
+  </ion-list>
+
+  <!-- <ion-button routerLink="/contacto">Ir Contacto</ion-button>
+  <ion-button routerLink="/nosotros">Ir Nosotros</ion-button> -->
 </ion-content>
